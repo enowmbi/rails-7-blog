@@ -8,3 +8,11 @@
 
   <%= button_to "Destroy this post", @post, method: :delete, class: "btn btn-outline-danger my-2" %>
 </div>
+<p>
+<%= render 'comments/comment' %>
+</p>
+<div class="form-group">
+<%= form_with(model: [@post, Comment]) do |form| %>
+  <%= form.text_area :body, class: "form-control" %>
+  <%= form.submit "Comment", class: "btn btn-outline-primary my-2" %>
+<% end %>
