@@ -1,3 +1,4 @@
+<%# <%= turbo_stream_from @post %1> %>
 <p style="color: green"><%= notice %></p>
 
 <%= render @post %>
@@ -9,7 +10,7 @@
   <%= button_to "Destroy this post", @post, method: :delete, class: "btn btn-outline-danger my-2" %>
 </div>
 <p>
-<%= render 'comments/comment' %>
+<%= render 'posts/comment', post: @post %>
 </p>
 <div class="form-group">
 <%= form_with(model: [@post, Comment]) do |form| %>
