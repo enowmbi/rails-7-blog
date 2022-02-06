@@ -10,7 +10,7 @@
   <%= button_to "Destroy this post", @post, method: :delete, class: "btn btn-outline-danger my-2" %>
 </div>
 <p>
-<%= render 'posts/comment', post: @post %>
+<%= render 'posts/comments', post: @post %>
 </p>
 <div class="form-group">
 <%= form_with(model: [@post, Comment]) do |form| %>

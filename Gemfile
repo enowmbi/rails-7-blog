@@ -59,10 +59,13 @@ group :development, :test do
   gem "rspec-rails"
 
   # Add simplecov for code coverage
-gem "simplecov", require: false
+  gem "simplecov", require: false
 
   # Add shoulda-matchers
   gem "shoulda-matchers"
+
+  #Use letter_opener for previewing mails
+  # gem 'letter_opener'
 end
 
 group :development do
