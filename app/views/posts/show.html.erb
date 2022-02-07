@@ -1,19 +1,15 @@
-<%# <%= turbo_stream_from @post %1> %>
 <p style="color: green"><%= notice %></p>
 
 <%= render @post %>
 
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post), class: "btn btn-outline-primary my-2" %> |
-  <%= link_to "Back to posts", posts_path, class: "btn btn-outline-primary my-2" %>
-
-  <%= button_to "Destroy this post", @post, method: :delete, class: "btn btn-outline-danger my-2" %>
-</div>
+<%= render "links_on_show_page", post: @post %>
+<h4><%= pluralize(@post.comments.count,'Comments') %></h4>
+<hr/>
 <p>
-<%= render 'posts/comments', post: @post %>
+    <%= render 'posts/comments', post: @post %>
 </p>
 <div class="form-group">
-<%= form_with(model: [@post, Comment]) do |form| %>
-  <%= form.text_area :body, class: "form-control" %>
-  <%= form.submit "Comment", class: "btn btn-outline-primary my-2" %>
-<% end %>
+  <%= form_with(model: [@post, Comment]) do |form| %>
+    <%= form.text_area :body, placeholder: "Enter your comment", class: "form-control" %>
+    <%= form.submit "Comment", class: "btn btn-outline-primary my-2" %>
+  <% end %>
